@@ -1,12 +1,13 @@
 const express = require('express');
 const userCtrl = require('../controller/userCtrl');
 const verifyCookie = require('../middlewares/verifyCookie');
-const { upload } = require('../middlewares/upload');
+const { upload,uploadToCloudinary } = require('../middlewares/upload');
 
 const userRouter = express.Router();
 
-userRouter.post("/api/v1/users/register", upload.single('profilePic'), userCtrl.registerTempUser);
-userRouter.post("/api/v1/users/verify-otp", userCtrl.register);
+userRouter.post("/api/v1/users/register", upload.single('profilePic'),
+  uploadToCloudinary, userCtrl.registerTempUser);
+userRouter.post("/api/v1/users/verify-otp",userCtrl.register);
 userRouter.post("/api/v1/users/resend-otp", userCtrl.resendOtp);
 
 userRouter.post("/api/v1/users/login", userCtrl.login);

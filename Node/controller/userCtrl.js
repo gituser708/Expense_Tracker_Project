@@ -29,7 +29,7 @@ const userCtrl = {
         const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(password, salt);
 
-        const profilePic = req.file ? req.file.path : '';
+        const profilePic = req.body.profilePic || '';
 
         const otp = crypto.randomInt(100000, 999999);
         const otpExpires = Date.now() + 1000 * 60 * 10;
