@@ -9,14 +9,14 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'https://expense-tracker-project-server.onrender.com',
         changeOrigin: true,
         secure: false,
-      }
-    }
+      },
+    },
   },
 
   build: {
     outDir: 'dist',
-  }
+  },
 });
