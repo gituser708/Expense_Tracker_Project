@@ -1,0 +1,137 @@
+/* Container */
+.categoty-lists-container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Heading */
+.categoty-lists-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Category List */
+.categoty-lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+/* Category Item with Gradient */
+.category-items {
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Vibrant gradient */
+  border-radius: 16px;
+  padding: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Light mode shadow */
+  color: #fff;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.category-items:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Name */
+.category-items span:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Category Type */
+.category-items span:nth-child(2) {
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.2); /* Soft contrast */
+}
+
+/* Category Date */
+.category-items span:nth-child(3) {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Delete Button */
+.category-delete-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: transform 0.2s ease;
+  color: #fff;
+}
+
+.category-delete-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .category-items {
+    max-width: 100%;
+  }
+
+  .categoty-lists {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categoty-lists-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .category-items {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .category-items {
+    max-width: 30%;
+  }
+}
+
+/* 🌙 Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .category-items {
+    background: linear-gradient(135deg, #3a3d5c, #5c5470); /* Dark gradient */
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1); /* Soft glow */
+    color: #e0e0e0;
+  }
+
+  .category-items:hover {
+    box-shadow: 0 12px 32px rgba(255, 255, 255, 0.15);
+  }
+
+  .category-delete-btn {
+    color: #e0e0e0;
+  }
+
+  .category-items span:nth-child(2) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .category-items span:nth-child(3) {
+    color: #ff7f7f;
+  }
+}

@@ -1,0 +1,16 @@
+body {
+  background: #fff;
+  color: #222;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background: #111;
+  color: #eee;
+}
+
+/* override components if needed */
+.navbar.dark {
+  background: #222;
+}
+

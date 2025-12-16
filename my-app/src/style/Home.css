@@ -1,0 +1,241 @@
+.home-banner {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 4%;
+  overflow: hidden;
+}
+
+.home-banner-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* ensures head stays visible */
+  z-index: 1;
+}
+
+.home-banner-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 2rem 2rem;
+  text-align: left;
+  line-height: 1.5;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.5rem;
+}
+.home-banner-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  color: #fff
+}
+.home-banner-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+
+.section-two {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.section-two h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: rgb(69, 247, 69)
+}
+
+.process-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.process-section span {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.process-section span:hover {
+  transform: translateY(-2px);
+}
+
+.process-section i {
+  color: #007bff;
+  display: flex;
+  align-items: center;
+}
+
+
+.section-three h2{
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  text-align: center;
+  margin: 5rem auto;
+  color: rgb(69, 247, 69)
+}
+
+
+.feature-section {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.10);
+  text-align: center;
+  max-width: 300px;
+  flex: 1 1 300px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -3.5rem auto 1rem;
+  font-size: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.green { background-color: #1abc9c; }
+.pink  { background-color: #f65aa7; }
+.blue  { background-color: #00bfff; }
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ✅ Mobile responsive styling */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .home-banner {
+    width: 100%;
+    height: 250px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home-banner img {
+    width: 100%;
+  }
+
+  .home-banner-content {
+   background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.5rem;
+    margin-top: 7rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    right: 0.5rem;
+  }
+
+  .home-banner-content h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .home-banner-content p {
+    font-size: 1.1rem;
+    color: rgb(42, 40, 40);
+    font-weight: 600;
+  }
+
+  .process-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .feature-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .feature-card {
+    max-width: 90%;
+    max-height: 30vh;
+  }
+}
+
+
+/* Mobile Platform */
+@media (max-width: 480px) {
+   .home-banner img {
+    width: 100%;
+  }
+
+  .process-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .feature-card{
+    padding: 1rem;
+    padding-bottom: 0px;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .feature-card {
+    max-width: 90%;
+    max-height: 30vh;
+  }
+}

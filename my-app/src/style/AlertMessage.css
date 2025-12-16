@@ -1,0 +1,108 @@
+/* Wrapper: center modal alert on screen */
+.alert-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  animation: slideDown 0.4s ease-out forwards;
+  overflow: hidden;
+}
+
+/* Base Alert Style */
+.alert-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  min-width: 320px;
+  max-width: 90vw;
+  font-weight: 500;
+  font-size: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-left: 6px solid;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in forwards;
+  overflow: hidden;
+}
+
+/* Message Text */
+.alert-text {
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Icons */
+.alert-icon {
+  font-size: 22px;
+  background: transparent;
+}
+
+/* Spinner (loading) */
+.spinner {
+   animation: spin 1s linear infinite;
+   background: transparent;
+}
+
+/* Theme Variants */
+.alert-box.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border-color: #16a34a;
+}
+
+.alert-box.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-color: #dc2626;
+}
+
+.alert-box.loading {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  border-color: #2563eb;
+  overflow: hidden;
+}
+
+.alert-icon.green {
+  color: #16a34a;
+  background: transparent;
+}
+
+.alert-icon.red {
+  color: #dc2626;
+  background: transparent;
+}
+
+.alert-icon.blue {
+  color: #2563eb;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

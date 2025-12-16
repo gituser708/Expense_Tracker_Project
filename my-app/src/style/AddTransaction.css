@@ -1,0 +1,103 @@
+/* Container with dual-tone gradient */
+.add-transaction-container {
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 5px 10px 20px rgba(46, 46, 46, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Form layout */
+.add-transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Heading with icon */
+.add-transaction-form h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+
+/* Labels */
+.add-transaction-form label {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Inputs and Select */
+.add-transaction-form input,
+.add-transaction-form select,
+.add-transaction-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d0d7e2;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background-color: #f9fbff;
+  transition: border-color 0.3s ease;
+}
+
+.add-transaction-form input:focus,
+.add-transaction-form select:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+/* Error messages */
+.transaction-input-err {
+  font-size: 0.85rem;
+  color: #e74c3c;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Button */
+.add-transaction-btn {
+  padding: 0.9rem;
+  background: linear-gradient(to right, #0077ff, #00c6ff);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-transaction-btn:hover {
+  background: #32cd32;
+  transform: scale(1.03);
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .add-transaction-container {
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+    margin: 1rem;
+  }
+
+  .add-transaction-form h2 {
+    font-size: 1.4rem;
+  }
+
+  .add-transaction-form input,
+  .add-transaction-form select {
+    font-size: 0.9rem;
+  }
+
+  .add-transaction-btn {
+    font-size: 0.95rem;
+  }
+}
