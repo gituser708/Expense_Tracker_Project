@@ -1,7 +1,7 @@
 const express = require('express');
 const userCtrl = require('../controller/userCtrl');
-const upload = require('../middlewares/upload');
 const verifyCookie = require('../middlewares/verifyCookie');
+const { upload } = require('../middlewares/upload');
 
 const userRouter = express.Router();
 
