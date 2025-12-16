@@ -188,7 +188,7 @@ const userCtrl = {
   user.resetPasswordExpires = Date.now() + 1000 * 60 * 15;
   await user.save();
 
-  const resetUrl = `http://localhost:3000/reset-password/${token}`;
+  const resetUrl = `https://expense-tracker-web-app-3u3b.onrender.com/reset-password/${token}`;
   const templatePath = path.join(__dirname, "../html/resetPassword.html");
 
   let html = fs.readFileSync(templatePath, "utf-8");
