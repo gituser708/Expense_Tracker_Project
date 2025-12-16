@@ -7,8 +7,8 @@ It provides **secure authentication**, **OTP‑based verification**, **password 
 
 ## 🚀 Live Demo
 
-* **Frontend:** [https://extracker-web-app.onrender.com]
-* **Backend API:** [https://extraker-project-server.onrender.com]
+* **Frontend:** [https://expense-tracker-web-app-3u3b.onrender.com]
+* **Backend API:** [https://expense-tracker-project-server.onrender.com]
 
 ---
 
