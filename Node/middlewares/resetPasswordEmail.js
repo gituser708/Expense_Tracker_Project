@@ -4,30 +4,31 @@ const nodemailer = require('nodemailer');
 const resetPasswordEmail = async ({ to, subject, html }) => {
   try {
     const transporter = nodemailer.createTransport({
-      service: 'gmail', 
+      host: process.env.BREVO_HOST,
+      port: process.env.BREVO_PORT,
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, 
+        user: process.env.BREVO_USER,
+        pass: process.env.BREVO_SMTP_KEY,
       },
       tls: {
-        rejectUnauthorized: false, 
+        rejectUnauthorized: false,
       },
-      socketTimeout: 10000, 
+      connectionTimeout: 10000,
+      socketTimeout: 15000,
     });
-
     const message = {
-      from: `"Expense Tracker" <${process.env.EMAIL_USER}>`, 
+      from: `ExTracker <${process.env.BREVO_USER}>`,
       to,
       subject,
       html,
     };
-
     const info = await transporter.sendMail(message);
-    console.log(`✅ Reset Email Sent: ${info.messageId}`);
+    console.log(`Reset Email Sent: ${info.messageId}`);
   } catch (error) {
-    console.error(`❌ Email send failed: ${error.message}`);
-    throw new Error('Email could not be sent!');
-  }
+    console.error('Error sending reset password email:', error);
+    throw new Error('Failed to send reset password email');
+  };
 };
 
 module.exports = resetPasswordEmail;
