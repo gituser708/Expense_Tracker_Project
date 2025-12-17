@@ -1,34 +1,31 @@
 require('dotenv').config({ quiet: true });
 const nodemailer = require('nodemailer');
 
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+  connectionTimeout: 10000,
+  socketTimeout: 15000,
+});
+
 const resetPasswordEmail = async ({ to, subject, html }) => {
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.BREVO_HOST,
-      port: process.env.BREVO_PORT,
-      secure: false,
-      auth: {
-        user: process.env.BREVO_USER,
-        pass: process.env.BREVO_SMTP_KEY,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-      connectionTimeout: 10000,
-      socketTimeout: 15000,
-    });
-    const message = {
-      from: `ExTracker <${process.env.BREVO_USER}>`,
+    const info = await transporter.sendMail({
+      from: `ExTracker <${process.env.GMAIL_USER}>`,
       to,
       subject,
       html,
-    };
-    const info = await transporter.sendMail(message);
+    });
+
     console.log(`Reset Email Sent: ${info.messageId}`);
+    return info;
   } catch (error) {
-    console.error('Error sending reset password email:', error);
-    throw new Error('Failed to send reset password email');
-  };
+    console.error('Error sending OTP:', error);
+    throw new Error('Failed to send OTP');
+  }
 };
 
 module.exports = resetPasswordEmail;
