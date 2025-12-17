@@ -24,10 +24,10 @@ const otpSendEmail = async ({ to, subject, html }) => {
         html,
       };
       const info = await transporter.sendMail(message);
-      console.log(`Reset Email Sent: ${info.messageId}`);
+      console.log(`OTP Sent: ${info.messageId}`);
     } catch (error) {
-      console.error('Error sending reset password email:', error);
-      throw new Error('Failed to send reset password email');
+      console.error('Error to sending OPT:', error);
+      throw new Error('Failed to send OTP');
     };
 };
 
